@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+</head>
+<script>
+    function login_form() {
+        let username = document.forms["login"]["username"].value;
+        let password = document.forms["login"]["password"].value;
+        if (username == "kelompok7" && password == "kelompok7") {
+            alert("Selamat datan Kelompok 7!")
+        } else {
+            alert("Username & Password Anda salah!")
+        }
+    }
+
+    function opsi_password() {
+        let y = document.getElementById("input-password");
+        if (y.type == "password") {
+            y.type = "text"
+        } else {
+            y.type = "password"
+        }
+    }
+
+    function reset() {
+        document.getElementById("reset").reset();
+    }
+
+</script>
+
+<body>
+    <div>
+        <div>
+            <h2>LOGIN</h2>
+        </div>
+        <div>
+            <form id="login" action="index.html" onsubmit="login_form()">
+                <label for="username">USERNAME</label><br>
+                <input type="text" name="username" required><br><br>
+                <input type="password" name="password" id="input-password" required>
+                <input type="checkbox" onclick="opsi_password()">
+                <label>Perlihatkan Password</label><br><br>
+                <input type="submit" value="Login" onclick="login()">
+                <input type="reset" onclick="reset()" id="reset"><br>
+            </form><br>
+            <div>
+                <a href="registrasi.html">Daftar Akunmu</a>
+            </div><br>
+            <div>
+                <a href="index.html">Kembali ke Beranda</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
